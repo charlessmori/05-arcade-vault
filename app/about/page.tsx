@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactForm } from "@/components/about/contact-form";
 import {
   HighlightIcon,
   type HighlightKind,
@@ -84,28 +85,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Placeholder estático: se reemplaza por <ContactForm /> en el Paso 8 */}
-          <form className="contact-form">
-            <div className="field">
-              <label>NOMBRE</label>
-              <input placeholder="px_kai" />
-            </div>
-            <div className="field">
-              <label>CORREO ELECTRÓNICO</label>
-              <input type="email" placeholder="jugador@vault.gg" />
-            </div>
-            <div className="field">
-              <label>MENSAJE</label>
-              <textarea rows={5} placeholder="Cuéntanos qué tienes en mente…" />
-            </div>
-            <button
-              className="btn xl press"
-              type="button"
-              style={{ width: "100%" }}
-            >
-              ▶ &nbsp;ENVIAR MENSAJE
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </Reveal>
     </div>
