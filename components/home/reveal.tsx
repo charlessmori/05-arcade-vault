@@ -2,11 +2,19 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 
-type Props = { className?: string; children: ReactNode };
+type Props = {
+  className?: string;
+  "aria-hidden"?: boolean | "true" | "false";
+  children: ReactNode;
+};
 
 // Envuelve una sección con `.reveal` y le añade `.in` la primera vez que entra
 // en el viewport. Con `prefers-reduced-motion` se muestra de inmediato.
-export function Reveal({ className = "", children }: Props) {
+export function Reveal({
+  className = "",
+  "aria-hidden": ariaHidden,
+  children,
+}: Props) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -37,7 +45,11 @@ export function Reveal({ className = "", children }: Props) {
   }, []);
 
   return (
-    <section ref={ref} className={`${className} reveal`.trim()}>
+    <section
+      ref={ref}
+      className={`${className} reveal`.trim()}
+      aria-hidden={ariaHidden}
+    >
       {children}
     </section>
   );
