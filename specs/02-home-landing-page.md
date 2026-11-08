@@ -1,6 +1,6 @@
 # SPEC 02 — Home como landing page y biblioteca en `/games`
 
-> **Status:** Aprobado
+> **Status:** Implementado
 > **Depends on:** SPEC 01
 > **Date:** 2026-11-07
 > **Objective:** Portar a Next.js el home de `references/templates/home-about` como landing page en `/`, y mover la biblioteca actual a `/games`.
